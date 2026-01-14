@@ -1,0 +1,33 @@
+[package]
+name = "de0804_api_endpoint_summary"
+version = "0.1.0"
+authors = ["Hypernetix"]
+description = "API endpoints must have summary for documentation quality (DNA Section 24)"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+clippy_utils.workspace = true
+dylint_linting.workspace = true
+lint_utils.workspace = true
+
+[dev-dependencies]
+dylint_testing.workspace = true
+axum.workspace = true
+http.workspace = true
+utoipa.workspace = true
+modkit = { path = "../../../libs/modkit" }
+
+[[example]]
+name = "missing_summary"
+path = "ui/missing_summary.rs"
+
+[[example]]
+name = "has_summary"
+path = "ui/has_summary.rs"
+
+[package.metadata.rust-analyzer]
+rustc_private = true

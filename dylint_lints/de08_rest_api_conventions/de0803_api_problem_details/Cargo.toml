@@ -1,0 +1,37 @@
+[package]
+name = "de0803_api_problem_details"
+version = "0.1.0"
+authors = ["Hypernetix"]
+description = "Enforce Problem Details for 4xx/5xx responses per DNA Section 7"
+edition = "2021"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+clippy_utils.workspace = true
+dylint_linting.workspace = true
+lint_utils.workspace = true
+
+[dev-dependencies]
+dylint_testing.workspace = true
+axum.workspace = true
+http.workspace = true
+utoipa.workspace = true
+modkit = { path = "../../../libs/modkit" }
+
+[[example]]
+name = "json_error_404"
+path = "ui/json_error_404.rs"
+
+[[example]]
+name = "json_error_500"
+path = "ui/json_error_500.rs"
+
+[[example]]
+name = "problem_response"
+path = "ui/problem_response.rs"
+
+[package.metadata.rust-analyzer]
+rustc_private = true

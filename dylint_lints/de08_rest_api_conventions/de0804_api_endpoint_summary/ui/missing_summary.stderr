@@ -1,0 +1,12 @@
+error: API endpoint missing required summary (DE0804)
+  --> $DIR/missing_summary.rs:48:10
+   |
+LL |         .register(router, &openapi);
+   |          ^^^^^^^^
+   |
+   = help: Add .summary("Brief description") to the OperationBuilder chain
+   = note: DNA Section 24 requires one-line summary for all endpoints
+   = note: `#[deny(de0804_api_endpoint_summary)]` on by default
+
+error: aborting due to 1 previous error
+

@@ -110,12 +110,12 @@ dylint_lints/
 
 ### Adding a New Lint
 
-1. Create file in appropriate category (e.g., `src/de02_api_layer/de0205_my_lint.rs`)
+1. Create file in appropriate category (e.g., `src/de02_api_layer/DE0805_my_lint.rs`)
 
 2. Implement the lint:
 
 ```rust
-//! DE0205: My Lint Description
+//! DE0805: My Lint Description
 //!
 //! ## Example: Bad
 //! // ... bad code example
@@ -141,12 +141,12 @@ pub fn check<'tcx>(cx: &LateContext<'tcx>, item: &'tcx Item<'tcx>) {
 
 ```rust
 mod de02_api_layer {
-    pub mod de0205_my_lint;
+    pub mod DE0805_my_lint;
 }
 
 impl<'tcx> LateLintPass<'tcx> for ContractLints {
     fn check_item(&mut self, cx: &LateContext<'tcx>, item: &'tcx Item<'tcx>) {
-        de02_api_layer::de0205_my_lint::check(cx, item);
+        de02_api_layer::DE0805_my_lint::check(cx, item);
     }
 }
 ```
@@ -154,7 +154,7 @@ impl<'tcx> LateLintPass<'tcx> for ContractLints {
 4. Add test case in `ui/` directory (optional but recommended):
 
 ```rust
-// ui/de0205_my_lint.rs
+// ui/DE0805_my_lint.rs
 mod api {
     // Should trigger - violation example
     pub struct BadPattern { }

@@ -1,0 +1,12 @@
+warning: Use Problem Details for error responses, not plain JSON (DE0803)
+  --> $DIR/json_error_500.rs:49:10
+   |
+LL |         .json_response(StatusCode::INTERNAL_SERVER_ERROR, "Server error")
+   |          ^^^^^^^^^^^^^
+   |
+   = help: Use .problem_response(openapi, status, description) or convenience methods like .error_404(openapi)
+   = note: DNA Section 7 requires RFC 9457 Problem Details for all 4xx/5xx responses
+   = note: `#[warn(de0803_api_problem_details)]` on by default
+
+warning: 1 warning emitted
+
