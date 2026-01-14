@@ -418,6 +418,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "de0205_dtos_must_use_snake_case_rename_all"
+version = "0.1.0"
+dependencies = [
+ "clippy_utils",
+ "dylint_linting",
+ "dylint_testing",
+ "lint_utils",
+ "serde",
+]
+
+[[package]]
 name = "de0503_plugin_client_suffix"
 version = "0.1.0"
 dependencies = [
